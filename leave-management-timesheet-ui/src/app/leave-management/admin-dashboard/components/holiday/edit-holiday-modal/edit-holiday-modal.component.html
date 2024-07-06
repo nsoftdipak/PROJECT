@@ -1,0 +1,31 @@
+<div class="modal-header">
+    <h5 class="modal-title">Edit Holiday</h5>
+    <button type="button" class="btn-close" aria-label="Close" (click)="dismiss()"></button>
+  </div>
+  <div class="modal-body">
+    <form (ngSubmit)="save()" #holidayForm="ngForm"> <!-- Add ngSubmit to handle form submission -->
+      <div class="form-group mb-3">
+        <label for="occasionInput">Occasion:</label>
+        <input type="text" class="form-control" id="occasionInput" [(ngModel)]="occasion" name="occasion" required> <!-- Bind ngModel to component property and add required validation -->
+      </div>
+      <div class="form-group mb-3">
+        <label for="occasionDateInput">Occasion Date:</label>
+        <input type="date" class="form-control" id="occasionDateInput" [(ngModel)]="selectedDate" name="selectedDate" required> <!-- Bind ngModel to component property and add required validation -->
+      </div>
+      <div class="form-group mb-3">
+        <label for="locationSelect">Location:</label>
+        <select class="form-control" id="locationSelect" [(ngModel)]="locationId" name="locationId" required> <!-- Bind ngModel to component property and add required validation -->
+          <option *ngFor="let location of locations" [ngValue]="location.id">{{ location.name }}</option> <!-- Use [ngValue] instead of [value] for ngModel binding -->
+        </select>
+      </div>
+      <div class="form-group mb-3">
+        <label for="isOptional">Optional:</label>
+        <input type="checkbox" id="isOptional" [(ngModel)]="isOptional" name="isOptional">
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Save</button> <!-- Use type="submit" to trigger ngSubmit -->
+        <button type="button" class="btn btn-secondary" (click)="dismiss()">Cancel</button>
+      </div>
+    </form>
+  </div>
+  

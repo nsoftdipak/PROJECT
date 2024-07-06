@@ -1,0 +1,47 @@
+<main class="main-content mt-3 card shadow-sm p-3">
+  <h4 class="text-center mb-4 card-title">Leave Information</h4>
+  <div *ngIf="userLeave.length > 0; else noLeaveData">
+    <div class="table1">
+      <table class="table table-hover table-bordered table-striped table-responsive">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Leave ID</th>
+            <th scope="col">Half Day</th>
+            <th scope="col">From Date</th>
+            <th scope="col">To Date</th>
+            <th scope="col">Status</th>
+            <th scope="col">Comments</th>
+            <th scope="col">Attachments</th>
+            <th scope="col">Message</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let leave of userLeave; let i = index" [hidden]="i >= 10">
+            <td>{{ leave.id }}</td>
+            <td>{{ leave.half_day ? "Yes" : "No" }}</td>
+            <td>{{ leave.from_date | date : "yyyy-MM-dd" }}</td>
+            <td>{{ leave.to_date | date : "yyyy-MM-dd" }}</td>
+            <td>
+              <span
+                class="badge"
+                [ngClass]="{
+                  'badge-success': leave.status === 'approved',
+                  'badge-warning': leave.status === 'pending',
+                  'badge-danger': leave.status === 'rejected',
+                  'badge-secondary': leave.status === 'canceled'
+                }"
+                >{{ leave.status }}</span
+              >
+            </td>
+            <td>{{ leave.comments }}</td>
+            <td>{{ leave.attachments }}</td>
+            <td>{{ leave.message }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <ng-template #noLeaveData>
+    <p class="text-center text-danger">No leave data available.</p>
+  </ng-template>
+</main>

@@ -1,0 +1,149 @@
+<main class="main-content mt-3">
+  <div class="d-flex flex-column flex-lg-row">
+    <div class="card card-hover rounded-4 shadow-sm mb-4 p-4 calendar-card mx-lg-4">
+      <div class="d-flex align-items-center justify-content-between mb-4 p-2">
+        <div>
+          <button class="btn btn-sm btn-outline-primary" (click)="changeMonth(-1)">
+            Previous
+          </button>
+        </div>
+        <h4 class="h5 text-center mb-0 mb-lg-2">{{ currentMonth | date : "MMMM yyyy" }}</h4>
+        <div>
+          <button class="btn btn-sm btn-outline-primary" (click)="changeMonth(1)">
+            Next
+          </button>
+        </div>
+      </div>
+      <div class="days">
+        <div class="day"
+          *ngFor="let day of daysInMonth"
+          (click)="selectDate(day)"
+          [class.current-day]="isCurrentDay(day)"
+          [class.weekend]="isWeekend(day)"
+          [class.selected]="selectedDate === day">
+          {{ day | date : "d" }}
+        </div>
+      </div>
+      <button class="btn mt-4 mx-auto p-2"
+        [disabled]="!selectedDate"
+        (click)="showLeaveForm = true"
+        style="background-color: #f6822d; color: white; border: none">
+        Create Leave
+      </button>
+    </div>
+    <div class="card card-hover rounded-4 shadow-sm mb-4 p-3 flex-grow-1 calendar-card" *ngIf="showLeaveForm">
+      <h4 class="h5 mb-4">Create Absence</h4>
+      <form>
+        <div class="mb-3">
+          <label for="startDate" class="form-label text-start"
+            >Start Date</label
+          >
+          <input
+            type="date"
+            class="form-control"
+            id="startDate"
+            [(ngModel)]="selectedDate"
+            [value]="selectedDate | date : 'yyyy-MM-dd'"
+            disabled
+          />
+        </div>
+        <div class="mb-3">
+          <label for="endDate" class="form-label text-start">End Date</label>
+          <input
+            type="date"
+            class="form-control"
+            id="endDate"
+            name="endDate"
+            [(ngModel)]="selectedEndDate"
+            (change)="onEndDateChanged()"
+            [min]="getMinEndDate()"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="totalLeaveDays" class="form-label text-start"
+            >Total Leave Days</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="totalLeaveDays"
+            [(ngModel)]="totalLeaveDays"
+            name="totalLeaveDays"
+            [ngModelOptions]="{ standalone: true }"
+            [value]="totalLeaveDays ? totalLeaveDays : ''"
+            disabled
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="returningDate" class="form-label text-start"
+            >Returning Work Date</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="returningDate"
+            name="returningDate"
+            [(ngModel)]="returningWorkDate"
+            disabled
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="returningDate" class="form-label text-start"
+            >Leave Duration</label
+          >
+        <select class="form-select" id="halfDay" [(ngModel)]="halfDay" name="halfDay">
+          <option value="">Full Day</option>
+          <option value="first">First Half</option>
+          <option value="second">Second Half</option>
+        </select>
+        </div>
+        
+        <div class="mb-3">
+          <label for="leaveType" class="form-label text-start">Leave Type</label>
+          <select class="form-select" id="leaveType" [(ngModel)]="selectedLeaveTypeId" name="leaveType">
+            <option *ngFor="let leaveType of leaveTypes" [value]="leaveType.id">{{ leaveType.name }}</option>
+          </select>
+          
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label text-start">Message</label>
+          <textarea
+            class="form-control"
+            id="message"
+            rows="3"
+            name="message"
+            placeholder="Enter your message"
+            [(ngModel)]="message"
+          ></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label for="assignedToId" class="form-label text-start">Approver</label>
+          <select
+            class="form-select"
+            id="assignedToId"
+            [(ngModel)]="assignedToId"
+            name="assignedToId"
+          >
+            <option *ngFor="let user of users" [value]="user.id">
+              {{ user.first_name }}
+            </option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <button
+            type="button"
+            class="btn btn-primary btn1"
+            (click)="applyLeave()"
+          >
+            Apply Leave
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>

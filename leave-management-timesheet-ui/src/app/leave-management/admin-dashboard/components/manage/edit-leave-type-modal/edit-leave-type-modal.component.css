@@ -1,0 +1,23 @@
+.modal-header {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .modal-body {
+    padding: 2rem;
+  }
+  
+  .form-floating label {
+    color: #6c757d;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  

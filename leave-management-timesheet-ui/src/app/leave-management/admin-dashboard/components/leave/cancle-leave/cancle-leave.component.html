@@ -1,0 +1,59 @@
+<!-- <div class="container">
+    <h4 class="text-center p-3">Canceled Leaves</h4>
+    <table class="table table-hover table-responsive mt-3">
+      <thead>
+        <tr>
+          <th>Employee</th>
+          <th>Leave Type</th>
+          <th>From</th>
+          <th>To</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let leave of canceledLeaves">
+          <td>{{ leave.user.name }}</td>
+          <td>{{ leave.leave_type }}</td>
+          <td>{{ leave.from_date | date: 'dd-MM-yyyy' }}</td>
+          <td>{{ leave.to_date | date: 'dd-MM-yyyy' }}</td>
+          <td>{{ leave.status }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div> -->
+
+
+
+
+  <div class="main-content mt-2 p-2">
+    <div class="btn-group m-3">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          Pending Leave
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" routerLink="/leave-management/admin-dashboard/rejected-leave" routerLinkActive="active">Rejected Leave</a></li>
+          <li><a class="dropdown-item" routerLink="/leave-management/admin-dashboard/canceled-leave" routerLinkActive="active">Canceled Leave</a></li>
+        </ul>
+      </div>
+    <h4 class="text-center">Canceled Leaves</h4>
+    <table class="table table-striped table-responsive">
+      <thead>
+        <tr>
+            <th>Employee</th>
+            <th>Leave Type</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Status</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let leave of canceledLeaves">
+            <td>{{ leave.user.name }}</td>
+            <td>{{ leave.leave_type }}</td>
+            <td>{{ leave.from_date | date: 'dd-MM-yyyy' }}</td>
+            <td>{{ leave.to_date | date: 'dd-MM-yyyy' }}</td>
+            <td>{{ leave.status }}</td>
+          </tr>
+      </tbody>
+    </table>
+  </div>

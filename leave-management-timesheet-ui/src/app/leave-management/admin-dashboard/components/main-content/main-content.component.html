@@ -1,0 +1,113 @@
+<main class="main-content">
+  <div class="d-flex">
+    <div class="card shadow-sm dashboard-card-data card-hover">
+      <div class="card-body d-flex">
+        <button class="btn btn-lg btn-primary me-3 my-auto">
+          <i class="bi bi-people-fill"></i>
+        </button>
+        <div>
+          <p class="card-text h6">Employees</p>
+          <p class="card-text h6">{{ usersCount }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="card shadow-sm dashboard-card-data card-hover">
+      <div class="card-body d-flex">
+        <button class="btn btn-lg btn-warning me-3">
+          <i class="bi bi-building"></i>
+        </button>
+        <div>
+          <p class="card-text h6">Companies</p>
+          <p class="card-text h6">{{comanyes}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="card shadow-sm dashboard-card-data card-hover">
+      <div class="card-body d-flex">
+        <button class="btn btn-lg btn-danger me-3">
+          <i class="bi bi-briefcase-fill"></i>
+        </button>
+        <div>
+          <p class="card-text h6">holidays</p>
+          <p class="card-text h6">{{holidayscount}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="card shadow-sm dashboard-card-data card-hover">
+      <div class="card-body d-flex">
+        <button class="btn btn-lg btn-success me-3">
+          <i class="bi bi-cash"></i>
+        </button>
+        <div>
+          <p class="card-text h6">Salary</p>
+          <p class="card-text h6">$5.8M</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="component2">
+    <div class="row mt-5 ms-2 mb-4">
+      <div class="shadow div p-3 rounded-3 mb-4">
+        <table class="table table-hover table-responsive">
+          <thead class="table-primary">
+            <tr>
+              <th colspan="2" class="py-4 text-center">Today's Leaves</th>
+            </tr>
+            <tr>
+              <th>Name</th>
+              <th>Reason</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngIf="pagedLeaves.length === 0">
+              <td colspan="2" class="py-4 text-center">No Leaves Today</td>
+            </tr>
+            <tr *ngFor="let leave of pagedLeaves">
+              <td>{{ leave.userName }}</td>
+              <td>{{ leave.leaveType }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <nav>
+          <ul class="pagination justify-content-center">
+            <li class="page-item" [class.disabled]="currentPageLeaves === 1">
+              <button class="page-link" (click)="changePage('prev', 'leaves')">Previous</button>
+            </li>
+            <li class="page-item" [class.disabled]="currentPageLeaves === totalPagesLeaves">
+              <button class="page-link" (click)="changePage('next', 'leaves')">Next</button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="shadow div p-3 rounded-3">
+        <table class="table table-hover table-responsive">
+          <thead class="table-success">
+            <tr>
+              <th colspan="2" class="py-4 text-center">Holidays List</th>
+            </tr>
+            <tr>
+              <th>Holiday Name</th>
+              <th>Holiday Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of pagedHolidays">
+              <td>{{ data.occasion }}</td>
+              <td>{{ data.occasion_date | date }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <nav>
+          <ul class="pagination justify-content-center">
+            <li class="page-item" [class.disabled]="currentPageHolidays === 1">
+              <button class="page-link" (click)="changePage('prev', 'holidays')">Previous</button>
+            </li>
+            <li class="page-item" [class.disabled]="currentPageHolidays === totalPagesHolidays">
+              <button class="page-link" (click)="changePage('next', 'holidays')">Next</button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</main>

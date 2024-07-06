@@ -1,0 +1,66 @@
+h2 {
+  font-size: 2em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.fc .fc-event {
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.fc-event-title {
+  color: white !important; /* Ensuring event title text is white */
+}
+
+.fc-daygrid-event {
+  margin: 2px 0;
+  border: 1px solid #ddd;
+}
+
+.fc .fc-toolbar-title {
+  font-size: 1.5em;
+  color: #007bff;
+}
+
+.fc-button {
+  background-color: #007bff;
+  border: none;
+}
+
+.fc-button:hover {
+  background-color: #0056b3;
+}
+
+.fc-button-primary {
+  color: white;
+}
+
+.fc-button-primary:not(:disabled).fc-button-active,
+.fc-button-primary:not(:disabled):active {
+  background-color: #004085;
+  border-color: #004085;
+}
+
+.fc-daygrid-day-number {
+  color: #007bff;
+}
+
+.fc-day-today {
+  background-color: rgba(0, 123, 255, 0.1);
+}
+
+/* Additional styling for the center title */
+.fc-toolbar-chunk {
+  flex: 1 0 auto; /* Flex-grow: 1, Flex-shrink: 0, Flex-basis: auto */
+  text-align: center;
+}
+
+.fc-toolbar-title {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #007bff;
+}

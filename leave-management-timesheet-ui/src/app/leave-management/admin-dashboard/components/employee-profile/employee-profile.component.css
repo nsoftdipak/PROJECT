@@ -1,0 +1,54 @@
+.employee-nav {
+  height: 5rem;
+}
+
+.employee-image {
+  width: 5rem;
+  height: 5rem;
+}
+
+h5 {
+  cursor: pointer;
+}
+
+.employee-card {
+  height: 30rem;
+  overflow-y: auto;
+}
+
+.employee-card::-webkit-scrollbar {
+  display: none;
+}
+
+.setting-data {
+  width: 30rem;
+  padding: 1rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.setting-headings {
+  font-size: 1.4rem;
+  color: rgb(45, 44, 44);
+  font-weight: 400;
+}
+
+h5 {
+  font-size: 1.05rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+.btn-setting1 {
+  background-color: #f6822d;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  box-shadow: 0 5px 1px rgba(255, 125, 12, 0.4);
+  text-decoration: none;
+  padding: 11px;
+  width: 7rem;
+}

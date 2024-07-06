@@ -1,0 +1,39 @@
+<!-- <div class="card card-hover rounded-3 shadow-sm mb-4">
+  <div class="card-body employee-nav d-flex justify-content-between">
+    <div class="dropdown">
+      <button class="btn btn-setting1 dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+        Actions
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <li><a class="dropdown-item" (click)="createReport()">Create Reports</a></li>
+        <li><a class="dropdown-item" (click)="navigateToLeaveCalendar()">Leave Calendar</a></li>
+      </ul>
+    </div>
+  </div>
+</div> -->
+
+<main class="main-content rounded-3 shadow-sm p-3 bg-white"
+  *ngIf="calendarOptions">
+  <div class="mb-3 dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button"
+      id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+      {{ selectedLeaveStatus }}
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <li><a class="dropdown-item"
+          (click)="setLeaveStatus('Pending Leaves', 'pending')">Pending
+          Leaves</a></li>
+      <li><a class="dropdown-item"
+          (click)="setLeaveStatus('Cancelled Leaves', 'canceled')">Cancelled
+          Leaves</a></li>
+      <li><a class="dropdown-item"
+          (click)="setLeaveStatus('Rejected Leaves', 'rejected')">Rejected
+          Leaves</a></li>
+
+          <li>
+            <a class="dropdown-item" (click)="setLeaveStatus('Approved Leaves', 'approved')">Approved Leaves</a>
+          </li>
+    </ul>
+  </div>
+  <full-calendar [options]="calendarOptions"></full-calendar>
+</main>

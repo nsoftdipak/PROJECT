@@ -1,0 +1,32 @@
+<div class="modal-header">
+    <h5 class="modal-title">Update Leave</h5>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss()"></button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="updateLeaveForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="leaveType" class="form-label">Leave Type</label>
+        <input type="text" class="form-control" id="leaveType" formControlName="leave_type">
+      </div>
+      <div class="mb-3">
+        <label for="yearlyLeaves" class="form-label">Yearly Leaves</label>
+        <input type="number" class="form-control" id="yearlyLeaves" formControlName="yearly_leaves">
+      </div>
+      <div class="mb-3">
+        <label for="maxCarryForward" class="form-label">Max Carry Forward</label>
+        <input type="number" class="form-control" id="maxCarryForward" formControlName="max_carry_forward">
+      </div>
+      <div class="mb-3">
+        <label for="isEncashable" class="form-label">Is Encashable</label>
+        <select class="form-control" id="isEncashable" formControlName="is_encashable">
+          <option [value]="true">Yes</option>
+          <option [value]="false">No</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+
+  
+  

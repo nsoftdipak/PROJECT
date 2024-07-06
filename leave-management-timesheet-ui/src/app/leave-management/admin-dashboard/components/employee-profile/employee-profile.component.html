@@ -1,0 +1,35 @@
+<main class="main-content">
+  <div class="card card-hover rounded-3 shadow-sm mb-4">
+    <div class="card-body employee-nav d-flex justify-content-between">
+      <!-- Dropdown Button -->
+      <div class="dropdown">
+        <button class="btn btn-setting1 dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+          {{selectedAction}}
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <li><a class="dropdown-item" (click)="createReport()">Create Reports</a></li>
+          <li><a class="dropdown-item" (click)="navigateToLeaveCalendar()">Leave Calendar</a></li>
+          <!-- Add more dropdown items here if needed -->
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex">
+    <div class="card shadow-lg setting-data">
+      <h4 class="setting-headings">Basic Information</h4>
+      <hr />
+      <h5>First Name: {{ employee.first_name }}</h5>
+      <h5>Last Name: {{ employee.last_name }}</h5>
+      <h5>Email: {{ employee.email }}</h5>
+      <h5>Mobile Number: {{ employee.mobile_no }}</h5>
+      <h5>Date of Joining: {{ employee.date_of_joining | date: 'yyyy-MM-dd' }}</h5>
+    </div>
+
+    <div class="card shadow-lg setting-data">
+      <h4 class="setting-headings">Location</h4>
+      <hr/>
+      <h5>Location Name: {{ employee.location.name }}</h5>
+    </div>
+  </div>
+</main>

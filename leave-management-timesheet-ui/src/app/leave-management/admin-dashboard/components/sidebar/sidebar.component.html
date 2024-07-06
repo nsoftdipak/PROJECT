@@ -1,0 +1,84 @@
+<div class="position-sticky sidebar">
+  <div class="card card-hover rounded-4 shadow-sm mb-4">
+    <div class="card-body">
+      <p class="card-text">Home / Dashboard</p>
+      <h5 class="card-title">Admin Dashboard</h5>
+    </div>
+  </div>
+  <div class="card card-hover rounded-4 shadow-sm mb-4">
+    <img
+      class="card-img-top sidebar-image m-auto mt-4 rounded-circle"
+      src="../../../../../assets/img/team/t4.webp" />
+    <div class="card-body">
+      <h4 class="card-title text-center">Welcome Admin</h4>
+      <p class="card-text text-center">{{ user.email }}</p>
+    </div>
+  </div>
+
+
+  <div *ngIf="isManagePage(); else defaultSidebar"
+  class="card card-hover rounded-4 shadow-sm mb-4">
+  <div class="card-body mx-4">
+    <button (click)="CreateCompensatoryLeave()" class="dashboard-btn rounded-top-3" id="dashboard-btn1">
+     Compensatory Leave
+    </button>
+    <!-- <button class="dashboard-btn" data-bs-toggle="modal" data-bs-target="#createLeaveModal" id="dashboard-btn2">
+      Create Leave Type
+    </button> -->
+    <button (click)="goHoliday()" class="dashboard-btn" id="dashboard-btn3">
+      Holiday
+    </button>
+    <button (click)="goLeaveRequestSetting()" class="dashboard-btn" id="dashboard-btn4">
+      Leave Request Setting
+    </button>
+  </div>
+</div>
+  <!-- Conditionally render based on the route -->
+  <!-- <div *ngIf="isEmployeeRelatedPage(); else defaultSidebar"
+    class="card card-hover rounded-4 shadow-sm mb-4">
+    <div class="card-body mx-4">
+      <button routerLink="/leave-management/admin-dashboard/employee-profile/"
+        routerLinkActive="active" class="dashboard-btn rounded-top-3"
+        id="dashboard-btn1">
+        Profile
+      </button>
+      <button routerLink="/leave-management/admin-dashboard/employee-timeoff"
+        routerLinkActive="active" class="dashboard-btn" id="dashboard-btn1">
+        TimeOff
+      </button>
+    </div>
+  </div> -->
+
+  <!-- <div *ngIf="isEmployeeRelatedPage(); else defaultSidebar"
+    class="card card-hover rounded-4 shadow-sm mb-4">
+    <div class="card-body mx-4">
+      <button routerLink="/leave-management/admin-dashboard/holiday"
+        routerLinkActive="active" class="dashboard-btn rounded-top-3"
+        id="dashboard-btn1">
+        Holidays
+      </button>
+      <div class="btn-group">
+        <button type="button"
+          class="dashboard-btn rounded-top-3 dropdown-toggle"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          Leaves
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item"
+              routerLink="/leave-management/admin-dashboard/Compensatory-Request"
+              routerLinkActive="active">Compensatory Request </a></li>
+          <li><a class="dropdown-item"
+              routerLink="/leave-management/admin-dashboard/view"
+              routerLinkActive="active">View Leaves</a></li>
+          <li><a class="dropdown-item"
+              routerLink="/leave-management/admin-dashboard/report"
+              routerLinkActive="active">Leave Reports</a></li>
+        </ul>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- Default sidebar content -->
+  <ng-template #defaultSidebar>
+  </ng-template>
+</div>

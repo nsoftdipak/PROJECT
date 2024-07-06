@@ -1,0 +1,32 @@
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #f6822d;
+  color: white;
+  text-align: center;
+}
+
+.table td {
+  text-align: center;
+}
+
+.btn {
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-success:hover {
+  background-color: #28a745;
+}
+
+.btn-danger:hover {
+  background-color: #dc3545;
+}

@@ -1,0 +1,152 @@
+.nav-background {
+  background-color: #353847;
+  color: #ffffff;
+  height: 18rem;
+  border-bottom-right-radius: 4.5rem;
+  border-bottom-left-radius: 4.5rem;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 3rem;
+  margin-left: 1rem;
+}
+
+.navbar {
+  background-color: #ffffff;
+  height: 6rem;
+  border-radius: 1rem;
+}
+
+.search-bar {
+  color: #353847;
+  width: 15rem;
+}
+
+#search {
+  border-radius: 20px;
+  background-color: #353847;
+  color: white;
+  width: 14rem;
+  border: 0.5px solid white;
+}
+
+input[type="search"]:focus {
+  outline: 2px solid #ff4400;
+  box-shadow: none;
+}
+
+#search::placeholder {
+  color: #ffffff;
+}
+
+.nav-link {
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.navbar-items li a.active {
+  background-color: #f6822d;
+  color: #ffffff;
+  box-shadow: 0 5px 1px rgba(255, 125, 12, 0.4);
+  border-radius: 0.5rem;
+}
+
+.nav-link:hover {
+  background-color: lightgray;
+  border-radius: 0.5rem;
+  box-shadow: 0 5px 1px rgba(63, 63, 63, 0.4);
+}
+
+.navbar-image {
+  height: 3rem;
+  margin-left: 0.4rem;
+}
+
+.navbar-image {
+  height: 3rem;
+  margin-left: 0.4rem;
+}
+
+.dropdown-list {
+  display: none; 
+  position: absolute;
+  top: 100%; 
+  right: 0;
+  background-color: white;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  list-style: none;
+  padding: 0;
+}
+
+.dropdown-item:hover {
+  background-color: #ddd;
+}
+.dropdown-list li {
+  list-style-type: none;
+}
+
+.dropdown-list li a {
+  color: black;
+  padding: 11px 0px 7px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-list li a:hover {
+  background-color: #ddd;
+}
+
+.image-container:hover .dropdown-list {
+  display: block;
+  width: 13rem;
+}
+
+@media (max-width: 767px) {
+  .nav-background {
+    height: 9rem;
+    border-bottom-right-radius: 3rem;
+    border-bottom-left-radius: 3rem;
+    padding: 1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .navbar-brand {
+    position: relative;
+    display: block;
+    margin: 1rem auto;
+    font-size: 2rem;
+  }
+
+  .navbar {
+    position: static;
+    width: 100%;
+    border-radius: 0;
+    transform: none;
+    max-width: none;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .search-bar {
+    width: 100%;
+    max-width: 15rem;
+    margin: 1rem auto;
+    padding: 0.5rem;
+  }
+
+  .nav-link {
+    display: none;
+  }
+
+  #search {
+    display: none;
+  }
+
+  .navbar-image {
+    margin-left: 9rem;
+    height: 4rem;
+  }
+}

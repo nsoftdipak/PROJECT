@@ -1,0 +1,26 @@
+<main class="main-content rounded-3 shadow-sm p-3 bg-white"
+  *ngIf="calendarOptions">
+  <!-- Dropdown Button -->
+  <div class="mb-3 dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button"
+      id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+      {{ selectedLeaveStatus }}
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <li><a class="dropdown-item"
+          (click)="setLeaveStatus('Pending Leaves', 'pending')">Pending
+          Leaves</a></li>
+      <li><a class="dropdown-item"
+          (click)="setLeaveStatus('Cancelled Leaves', 'canceled')">Cancelled
+          Leaves</a></li>
+      <li><a class="dropdown-item"
+          (click)="setLeaveStatus('Rejected Leaves', 'rejected')">Rejected
+          Leaves</a></li>
+
+          <li>
+            <a class="dropdown-item" (click)="setLeaveStatus('Approved Leaves', 'approved')">Approved Leaves</a>
+          </li>
+    </ul>
+  </div>
+  <full-calendar [options]="calendarOptions"></full-calendar>
+</main>

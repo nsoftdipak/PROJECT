@@ -1,0 +1,26 @@
+<nav class="navbar" [ngClass]="{'d-none': hideNavbar}">
+  <div class="navbar-container container">
+    <input type="checkbox" id="navbar-toggle" />
+    <label for="navbar-toggle" class="hamburger-lines">
+      <span class="line line1"></span>
+      <span class="line line2"></span>
+      <span class="line line3"></span>
+    </label>
+    <ul class="menu-items mt-3">
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <a routerLink="/" (click)="closeMenu()">Home</a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/about" (click)="closeMenu()">About</a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/contact" (click)="closeMenu()">Contact</a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/login" (click)="closeMenu()">Login</a>
+      </li>
+     
+    </ul>
+    <h1 class="logo"><span>n</span>Soft</h1>
+  </div>
+</nav>

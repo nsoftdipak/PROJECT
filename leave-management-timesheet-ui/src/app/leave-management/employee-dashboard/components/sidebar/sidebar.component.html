@@ -1,0 +1,56 @@
+<div class="position-sticky sidebar">
+  <div class="card card-hover rounded-4 shadow-sm mb-4">
+    <div class="card-body">
+      <p class="card-text">Home / Dashboard</p>
+      <h5 class="card-title">Employee Dashboard</h5>
+    </div>
+  </div>
+  <div class="card card-hover rounded-4 shadow-sm mb-4">
+    <img class="card-img-top sidebar-image m-auto mt-4 rounded-circle"
+      src="../../../assets/img/team/t1.jpeg" />
+    <div class="card-body">
+      <h4 class="card-title text-center">Welcome {{user.first_name}}</h4>
+      <p class="card-text text-center">{{user.email}}</p>
+    </div>
+  </div>
+  <div class="card card-hover rounded-4 shadow-sm mb-4">
+    <div class="card-body mx-4">
+      <button
+        routerLink="/leave-management/employee-dashboard"
+        [routerLinkActiveOptions]="{exact:true}"
+        routerLinkActive="active"
+        class="dashboard-btn rounded-top-3"
+        id="dashboard-btn1">
+        Profile
+      </button>
+      <!-- <button
+        routerLink="/leave-management/employee-dashboard/apply-leave"
+        routerLinkActive="active"
+        class="dashboard-btn rounded-top-3"
+        id="dashboard-btn1">
+        Apply Leave
+      </button> -->
+
+      <button
+      routerLink="/leave-management/employee-dashboard/calender"
+      routerLinkActive="active"
+      class="dashboard-btn rounded-top-3"
+      id="dashboard-btn1">
+     Calender
+    </button>
+
+    <button
+      routerLink="/leave-management/employee-dashboard/leaves"
+      routerLinkActive="active"
+      class="dashboard-btn rounded-top-3"
+      id="dashboard-btn1">
+     Leave
+    </button>
+
+
+
+      
+
+    </div>
+  </div>
+</div>

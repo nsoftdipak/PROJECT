@@ -1,0 +1,44 @@
+.dashboard-card-data {
+  width: 18rem;
+  height: 6rem;
+  padding: 1rem;
+  margin-right: 1rem;
+}
+
+.component2 {
+  height: 450px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.component2::-webkit-scrollbar {
+  display: none;
+}
+
+.div {
+  width: 420px;
+  margin-right: 1rem;
+}
+
+@media (max-width: 767px) {
+  .card-text {
+    display: none;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .dashboard-card-data {
+    /* width: 15rem;
+    height: 6rem;
+    padding: rem;
+    margin-top: 1.5rem; */
+    display: none;
+  }
+
+  .div {
+    width: 100%;
+    margin-right: 0;
+  }
+}

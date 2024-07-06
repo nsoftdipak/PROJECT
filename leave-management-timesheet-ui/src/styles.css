@@ -1,0 +1,318 @@
+:root {
+  --white-color: #ffffff;
+  --primary-color: #ff4400;
+  --section-bg-color: #f0f8ff;
+  --dark-color: #000000;
+  --grey-color: #d0d1d1;
+  --p-color: #717275;
+  --body-font-family: "Roboto", sans-serif;
+  --h5-font-size: 24px;
+  --p-font-size: 20px;
+  --copyright-text-font-size: 16px;
+  --product-link-font-size: 14px;
+  --custom-link-font-size: 12px;
+  --font-weight-thin: 100;
+  --font-weight-light: 300;
+  --font-weight-normal: 500;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+}
+
+body,
+html {
+  height: 100%;
+  overflow-x: hidden;
+  font-family: var(--body-font-family);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.top-margin {
+  margin-top: 5.4rem;
+}
+
+.main-content {
+  width: 85%;
+  margin-left: 8.1rem;
+  margin-top: -4rem;
+  margin-bottom: 2rem;
+}
+
+.card-hover {
+  transition: box-shadow 0.3s ease-in;
+}
+
+.card-hover:hover {
+  box-shadow: 7px 7px 11px rgba(28, 27, 27, 0.1) !important;
+}
+
+.btn-button1 {
+  background-color: #f6822d;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  box-shadow: 0 5px 1px rgba(255, 125, 12, 0.4);
+  text-decoration: none;
+}
+
+.employee-nav {
+  height: 5rem;
+}
+
+.employee-image {
+  width: 5rem;
+  height: 5rem;
+}
+
+.dashboard-btn {
+  width: 13rem;
+  height: 3.4rem;
+  background-color: white;
+  color: black;
+  border: 0.1px solid rgb(241, 231, 231);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.dashboard-btn:hover {
+  background-color: hwb(0 90% 8%);
+  color: black;
+}
+
+.dashboard-btn:active {
+  background-color: #f6822d;
+  color: #ffffff;
+  border: none;
+}
+
+#dashboard-btn1.active {
+  background-color: #f6822d;
+  color: #ffffff;
+}
+
+/* Ensure all tables are responsive */
+table {
+  width: 100%;
+  table-layout: auto;
+}
+
+td,
+th {
+  word-break: break-word;
+}
+
+/* Add a wrapper to handle horizontal scrolling */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+@media (max-width: 992px) {
+  .main-content {
+    width: 100%;
+    margin-left: 1rem;
+  }
+
+  .top-margin {
+    margin-top: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .main-content {
+    width: 100%;
+    margin-top: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: 1rem;
+  }
+
+  .col-md-6 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .employee-nav {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .employee-nav .h5 {
+    margin-bottom: 1rem;
+  }
+
+  .col-md-6 {
+    padding: 0;
+  }
+
+  .employee-image {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .main-content {
+    margin-left: 1rem;
+  }
+
+  .btn-button1 {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+  }
+
+  td,
+  th {
+    word-break: normal;
+  }
+}
+
+.fc {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--white-color);
+}
+
+.fc-header-toolbar {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.fc-toolbar-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #262525;
+}
+
+.fc-button {
+  background-color: var(--white-color);
+  color: var(--primary-color);
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.fc-button:hover,
+.fc-button:focus {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+.fc-button-group .fc-button {
+  margin-right: 0.5rem;
+}
+
+.fc-button-group .fc-button:last-child {
+  margin-right: 0;
+}
+
+.fc-button:disabled {
+  background-color: var(--grey-color);
+  color: var(--dark-color);
+}
+
+.fc-daygrid-event {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.2rem 0.5rem;
+}
+
+.fc-daygrid-day-number {
+  font-weight: bold;
+}
+
+.fc-daygrid-event:hover {
+  background-color: darken(var(--primary-color), 10%);
+}
+
+.fc-day-today {
+  background-color: var(--section-bg-color);
+}
+
+.fc-day-past {
+  background-color: lighten(var(--grey-color), 40%);
+}
+
+.fc-daygrid-day-top {
+  /* Light blue background */
+  /* Black text */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.fc-daygrid-day-number {
+  color: #000;
+  font-weight: bold;
+  /* Make the date numbers bold */
+  text-decoration: none;
+}
+
+/* For timeGridWeek and timeGridDay views */
+.fc-timegrid-axis {
+  background-color: #e3f2fd;
+  /* Same light blue background */
+  color: #000;
+  /* Black text */
+}
+
+.fc-col-header-cell {
+  background-color: #f5db69;
+  /* Light gray background */
+  font-weight: bold;
+  /* Make text bold */
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  align-items: center;
+  padding: 60px;
+  height: 40px;
+}
+
+/* Apply similar background color to the calendar header */
+.fc-toolbar {
+  padding: 20px;
+  background-color: var(--white-color);
+  /* Light blue-green */
+  border-bottom: 1px solid #ccc;
+  /* Optional border */
+}
+
+.fc-toolbar .fc-toolbar-chunk {
+  padding: 5px;
+  /* Apply padding within chunks */
+}
+
+.fc-toolbar .fc-button {
+  margin-right: 10px;
+  /* Add margin for spacing between buttons */
+}
+
+.fc-daygrid-day {
+  padding: 0px;
+  /* Apply padding around day cells */
+}

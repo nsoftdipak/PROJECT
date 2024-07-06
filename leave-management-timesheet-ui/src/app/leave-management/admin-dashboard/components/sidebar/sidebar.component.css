@@ -1,0 +1,18 @@
+.sidebar {
+  margin-top: -4rem !important;
+  margin-left: 1rem;
+  width: 18rem;
+}
+
+.sidebar-image {
+  width: 6.5rem !important;
+  height: 6.5rem !important;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    margin-top: 0 !important;
+    margin-left: 0;
+    width: 100%;
+  }
+}

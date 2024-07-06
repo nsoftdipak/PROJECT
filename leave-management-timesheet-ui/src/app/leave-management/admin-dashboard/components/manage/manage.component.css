@@ -1,0 +1,45 @@
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #f6822d;
+  color: white;
+  text-align: center;
+}
+
+.table td {
+  text-align: center;
+}
+
+.btn {
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-success:hover {
+  background-color: #28a745;
+}
+
+.btn-danger:hover {
+  background-color: #dc3545;
+}
+
+.btn-setting1 {
+  background-color: #f6822d;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  box-shadow: 0 5px 1px rgba(255, 125, 12, 0.4);
+  text-decoration: none;
+  padding: 11px;
+  width: 12rem;
+}

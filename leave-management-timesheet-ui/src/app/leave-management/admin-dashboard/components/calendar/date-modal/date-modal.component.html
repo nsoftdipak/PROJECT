@@ -1,0 +1,26 @@
+<div class="modal-body">
+  <form>
+    <div class="form-group">
+      <label for="occasionInput">Occasion:</label>
+      <input type="text" class="form-control" id="occasionInput" [(ngModel)]="occasion" name="occasion">
+    </div>
+    <div class="form-group">
+      <label for="occasionDateInput">Occasion Date:</label>
+      <input type="date" class="form-control" id="occasionDateInput" [(ngModel)]="selectedDate" name="selectedDate">
+    </div>
+    <div class="form-group">
+      <label for="locationSelect">Location:</label>
+      <select class="form-control" id="locationSelect" [(ngModel)]="locationId" name="locationId">
+        <option *ngFor="let location of locations" [value]="location.id">{{ location.name }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="isOptional">Optional:</label>
+      <input type="checkbox" id="isOptional" [(ngModel)]="isOptional" name="isOptional">
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary" (click)="save()">Save</button>
+  <button type="button" class="btn btn-secondary" (click)="dismiss()">Cancel</button>
+</div>

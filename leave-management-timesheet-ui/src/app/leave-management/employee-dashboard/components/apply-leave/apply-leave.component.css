@@ -1,0 +1,78 @@
+/* Adjustments for responsive layout */
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  margin-top: 9px;
+}
+
+.day {
+  border: 1px solid #ccc;
+  padding: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.current-day {
+  background-color: #efefef;
+}
+
+.weekend {
+  color: red;
+}
+
+.calendar-card {
+  width: 100%; /* Adjusted to take full width */
+  max-width: 25.4rem; /* Set maximum width to limit card size */
+  height: auto; /* Allow height to adjust based on content */
+  overflow-y: auto;
+}
+
+.day.current-day {
+  background-color: #007bff;
+  color: white;
+}
+
+.day.weekend {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.day {
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.day.selected {
+  border: 1px solid var(--dark-color);
+}
+
+.current-day {
+  font-weight: bold;
+}
+
+.weekend {
+  color: #ff6347;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .d-flex.flex-column.flex-lg-row {
+    flex-direction: column;
+  }
+
+  .calendar-card {
+    max-width: 100%; /* Card takes full width on smaller screens */
+  }
+
+  .card {
+    margin-bottom: 1rem; /* Adds space between cards */
+  }
+
+  .days {
+    grid-template-columns: repeat(7, minmax(0, 1fr)); /* Adjust grid columns */
+    gap: 3px; /* Reduce gap between days */
+  }
+}

@@ -1,0 +1,21 @@
+<main class="main-content mt-4">
+  <div class="d-flex">
+    <div class="card shadow setting-data ms-auto">
+      <h4 class="setting-headings">Basic Information</h4>
+      <hr />
+      <h5>First Name: {{ user.first_name }}</h5>
+      <h5>Last Name: {{ user.last_name }}</h5>
+      <h5>Email: {{ user.email }}</h5>
+      <h5>Mobile Number: {{ user.mobile_no }}</h5>
+      <h5>Date of Joining: {{ user.date_of_joining | date: 'yyyy-MM-dd' }}</h5>
+    </div>
+
+    <div class="card shadow setting-data ms-3">
+      <h4 class="setting-headings">Location</h4>
+      <hr />
+      <h5>Location Name: {{ user.location.name }}</h5> 
+    </div>
+  </div>
+</main>
+<!-- <router-outlet></router-outlet> -->
+

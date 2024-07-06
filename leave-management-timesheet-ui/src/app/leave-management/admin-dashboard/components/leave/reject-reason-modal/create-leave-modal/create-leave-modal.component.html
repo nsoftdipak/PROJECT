@@ -1,0 +1,91 @@
+<div
+  class="modal fade"
+  id="createLeaveModal"
+  tabindex="-1"
+  aria-labelledby="createLeaveModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="createLeaveModalLabel">Create Leave</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="createLeaveForm" (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              formControlName="name"
+              placeholder="Enter name"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea
+              class="form-control"
+              id="description"
+              formControlName="description"
+              placeholder="Enter description"
+            ></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="max_carry_forward" class="form=label"
+              >max_carry_forward</label
+            >
+            <input
+              type="number"
+              class="form-control"
+              id="max_carry_forward"
+              formControlName="max_carry_forward"
+              placeholder="Enter max forword days to this leave"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="yearly_leaves" class="form-label">yearly_leaves</label>
+            <input
+              type="number"
+              class="form-control"
+              id="yearly_leaves"
+              formControlName="yearly_leaves"
+              placeholder="yearly_leaves"
+            />
+          </div>
+
+          <div class="mb-3">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              id="is_active"
+              formControlName="is_active"
+            />
+            <label class="form-check-label" for="is_active">Is Active</label>
+          </div>
+
+          <div>
+            <input type="checkbox" 
+            id="is_encashable"
+            class="form-check-input"
+            formControlName="is_encashable"
+
+            />
+            <label class="form-check-label" for="is_encashable">is_encashable</label>
+          </div>
+
+          <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<div class="main-content bg-light rounded-3 shadow-lg p-3">
+  <div class="d-flex justify-content-between mt-2 mb-2 shadow-sm" id="buttonDiv">
+    <div class="btn-group m-3">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        {{ selectedLeaveStatus }}
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" (click)="setLeaveStatus('Pending', 'pending')">Pending Leaves</a></li>
+        <li><a class="dropdown-item" (click)="setLeaveStatus('Rejected', 'rejected')">Rejected Leaves</a></li>
+        <li><a class="dropdown-item" (click)="setLeaveStatus('Canceled', 'canceled')">Canceled Leaves</a></li>
+        <li><a class="dropdown-item" (click)="setLeaveStatus('Approved', 'approved')">Approved Leaves</a></li>
+      </ul>
+    </div>
+    <div class="input-group m-3" style="max-width: 300px;">
+      <input type="text" class="form-control" placeholder="Search..." [(ngModel)]="searchText" (ngModelChange)="applyFilters()">
+      <button class="btn btn-outline-secondary" type="button" (click)="clearFilters()">Clear</button>
+    </div>
+  </div>
+  <br>
+  <div class="shadow-sm" id="table" id="scrollable-content">
+    <h4 class="text-center p-3">{{ selectedLeaveStatus }} Leaves</h4>
+    <button class="btn btn-success m-1" (click)="approveSelected()" [disabled]="!hasSelectedLeaves()" *ngIf="isPendingStatus()">Approve Selected</button>
+    <button class="btn btn-danger m-1" (click)="rejectSelected()" [disabled]="!hasSelectedLeaves()" *ngIf="isPendingStatus()">Reject Selected</button>
+    <table class="table table-hover table-responsive mt-3">
+      <thead>
+        <tr>
+          <th *ngIf="isPendingStatus()">Select</th>
+          <th>#</th> <!-- Numbering column -->
+          <th>Employee</th>
+          <th>Leave Type</th>
+          <th>From</th>
+          <th>To</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let leave of filteredLeaves; let i = index">
+          <td *ngIf="isPendingStatus()">
+            <input type="checkbox" [(ngModel)]="leave.selected">
+          </td>
+          <td>{{ i + 1 }}</td> <!-- Numbering starts from 1 -->
+          <td>{{ leave.user.name }}</td>
+          <td>{{ leave.leave_type }}</td>
+          <td>{{ leave.from_date | date : 'dd-MM-yyyy' }}</td>
+          <td>{{ leave.to_date | date : 'dd-MM-yyyy' }}</td>
+          <td *ngIf="isPendingStatus()">
+            <button class="btn btn-success m-1" (click)="approveLeave(leave.id)">Approve</button>
+            <button class="btn btn-danger m-1" (click)="rejectLeave(leave.id)">Reject</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

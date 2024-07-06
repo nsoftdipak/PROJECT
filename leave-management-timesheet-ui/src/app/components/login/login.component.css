@@ -1,0 +1,73 @@
+h2 {
+  font-weight: var(--font-weight-bold);
+}
+
+p {
+  color: #717275;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+a {
+  color: #717275;
+  text-decoration: none;
+  touch-action: manipulation;
+  transition: all 0.3s;
+}
+
+a:hover {
+  color: #ff4400;
+}
+
+.section-padding {
+  padding-top: 9rem;
+  padding-bottom: 7rem;
+}
+
+.custom-btn {
+  background: #000000;
+  border-radius: 50px;
+  color: #ffffff;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: inline-block;
+}
+
+.custom-btn:hover {
+  background: #ff4400;
+  color: #ffffff;
+}
+
+.form-floating > label {
+  color: #d0d1d1;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 991px) {
+  h1 {
+    font-size: 42px;
+    margin-bottom: 0;
+  }
+
+  p {
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .custom-btn {
+    font-size: 14px;
+    padding: 13.5px 20px;
+  }
+
+  .custom-btn {
+    padding-right: 27px;
+    padding-left: 27px;
+  }
+
+  .section-padding {
+    margin: 1rem;
+  }
+}

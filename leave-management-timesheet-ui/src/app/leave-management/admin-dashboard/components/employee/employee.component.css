@@ -1,0 +1,26 @@
+.employee-nav {
+  height: 5rem;
+}
+
+.employee-image {
+  width: 5rem;
+  height: 5rem;
+}
+
+h5 {
+  cursor: pointer;
+}
+
+.employee-card {
+  height: 30rem;
+  overflow-y: auto;
+}
+
+.employee-card::-webkit-scrollbar {
+  display: none;
+}
+
+
+.input-group{
+  width: 10px;
+}

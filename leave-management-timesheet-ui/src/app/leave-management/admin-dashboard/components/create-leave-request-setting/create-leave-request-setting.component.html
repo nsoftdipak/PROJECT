@@ -1,0 +1,42 @@
+<!-- create-leave-request-setting.component.html -->
+<div class="main-content bg-light rounded-3 shadow-sm p-3">
+  <h3>Leave Request Settings</h3>
+  <form [formGroup]="leaveRequestForm" (ngSubmit)="onSubmit()" class="mt-4">
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="value" class="form-label">Value</label>
+        <input type="number" class="form-control" id="value"
+          formControlName="value" placeholder="Enter value">
+      </div>
+      <div class="col-md-6">
+        <label for="unit" class="form-label">Unit</label>
+        <select class="form-control" id="unit" formControlName="unit">
+          <option value="day">Day</option>
+          <option value="month">Month</option>
+          <option value="year">Year</option>
+        </select>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="leaveTypeId" class="form-label">Leave Type</label>
+        <select class="form-control" id="leaveTypeId"
+          formControlName="leaveTypeId">
+          <option *ngFor="let leaveType of leaveTypes" [value]="leaveType.id">{{
+            leaveType.name }}</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <label for="companyId" class="form-label">Company</label>
+        <select class="form-control" id="companyId" formControlName="companyId">
+          <option *ngFor="let company of companies" [value]="company.id">{{
+            company.name }}</option>
+        </select>
+      </div>
+    </div>
+    <div class="mb-3">
+      <button type="submit" class="btn btn-primary"
+        [disabled]="leaveRequestForm.invalid">Save changes</button>
+    </div>
+  </form>
+</div>

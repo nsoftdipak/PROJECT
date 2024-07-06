@@ -1,0 +1,114 @@
+<main class="main-content">
+  <!-- Action Dropdown -->
+  <div class="card card-hover rounded-3 shadow-sm mb-4">
+    <div class="card-body employee-nav d-flex justify-content-between">
+      <div class="dropdown">
+        <button class="btn btn-setting1 dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+          Actions
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <li><a class="dropdown-item" (click)="createReport()">Create Reports</a></li>
+          <li><a class="dropdown-item" (click)="navigateToLeaveCalendar()">Leave Calendar</a></li>
+          <!-- Add more dropdown items here if needed -->
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- User Information -->
+  <div class="card mb-4 shadow-sm">
+    <div class="card-header bg-primary text-white">
+      <h4>User Information</h4>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{ userData.first_name }} {{ userData.last_name }}</h5>
+      <p class="card-text">
+        <strong>Email:</strong> {{ userData.email }}<br>
+        <strong>Mobile Number:</strong> {{ userData.mobile_no }}<br>
+        <strong>Date of Joining:</strong> {{ userData.date_of_joining | date: 'yyyy-MM-dd' }}<br>
+      </p>
+    </div>
+  </div>
+
+  <!-- Leave Balance Report -->
+  <div class="card mb-4 shadow-sm">
+    <div class="card-header bg-success text-white">
+      <h4>Leave Balance Report</h4>
+    </div>
+    <div class="card-body">
+      <div *ngIf="userLeaveBalance.length > 0; else noBalanceData">
+        <div class="row">
+          <div class="col">
+            <table class="table table-bordered table-hover">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Leave Type</th>
+                  <th scope="col">Yearly Leaves</th>
+                  <th scope="col">Max Carry Forward</th>
+                  <th scope="col">Prorated Balance</th>
+                  <th scope="col">Current Balance</th>
+                  <th scope="col">Compensatory Count</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let leave of userLeaveBalance">
+                  <td>{{ leave.company_leave?.leave_type?.name }}</td>
+                  <td>{{ leave.company_leave?.yearly_leaves }}</td>
+                  <td>{{ leave.company_leave?.max_carry_forward }}</td>
+                  <td>{{ leave.prorated_balance }}</td>
+                  <td>{{ leave.current_balance }}</td>
+                  <td>{{ leave.compensatory_count }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <ng-template #noBalanceData>
+        <p class="text-danger text-center">No leave balance data available for this user.</p>
+      </ng-template>
+    </div>
+  </div>
+
+  <!-- Leave Status Report -->
+  <div class="card mb-4 shadow-sm">
+    <div class="card-header bg-warning text-white">
+      <h4>Leave Status Report</h4>
+    </div>
+    <div class="card-body">
+      <div *ngIf="userLeaveStatus.length > 0; else noStatusData">
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Leave ID</th>
+                <th scope="col">Half Day</th>
+                <th scope="col">From Date</th>
+                <th scope="col">To Date</th>
+                <th scope="col">Status</th>
+                <th scope="col">Comments</th>
+                <th scope="col">Attachments</th>
+                <th scope="col">Message</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let leaveStatus of userLeaveStatus">
+                <td>{{ leaveStatus.id }}</td>
+                <td>{{ leaveStatus.half_day ? 'Yes' : 'No' }}</td>
+                <td>{{ leaveStatus.from_date | date: 'yyyy-MM-dd' }}</td>
+                <td>{{ leaveStatus.to_date | date: 'yyyy-MM-dd' }}</td>
+                <td>{{ leaveStatus.status }}</td>
+                <td>{{ leaveStatus.comments }}</td>
+                <td>{{ leaveStatus.attachments }}</td>
+                <td>{{ leaveStatus.message }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <ng-template #noStatusData>
+        <p class="text-danger text-center">No leave status data available for this user.</p>
+      </ng-template>
+    </div>
+  </div>
+</main>

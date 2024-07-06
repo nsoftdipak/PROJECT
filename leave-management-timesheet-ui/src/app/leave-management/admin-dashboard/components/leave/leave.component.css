@@ -1,0 +1,24 @@
+.table th {
+  background-color: #f6822d;
+  color: white;
+  text-align: center;
+}
+
+.table td {
+  text-align: center;
+}
+
+#buttonDiv{
+  border-bottom: 1px solid black;
+}
+
+
+#table{
+  border-top: 1px solid black;
+}
+
+#scrollable-content {
+  max-height: 100vh; /* Adjust the height as needed */
+  overflow-y: auto;
+
+}

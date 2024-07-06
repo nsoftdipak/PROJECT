@@ -1,0 +1,92 @@
+<div class="modal-header">
+  <h5 class="modal-title">Apply Leave</h5>
+  <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss()"></button>
+</div>
+<div class="modal-body">
+  <form>
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="startDate" class="form-label">Start Date</label>
+        <input
+          type="date"
+          class="form-control"
+          id="startDate"
+          [(ngModel)]="selectedDate"
+          (change)="onStartDateChanged()"
+          name="startDate"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="endDate" class="form-label">End Date</label>
+        <input
+          type="date"
+          class="form-control"
+          id="endDate"
+          [(ngModel)]="selectedEndDate"
+          (change)="onEndDateChanged()"
+          name="endDate"
+          [min]="getMinEndDate()"
+        />
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="totalLeaveDays" class="form-label">Total Leave Days</label>
+        <input
+          type="text"
+          class="form-control"
+          id="totalLeaveDays"
+          [value]="totalLeaveDays"
+          disabled
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="returningDate" class="form-label">Returning Work Date</label>
+        <input
+          type="text"
+          class="form-control"
+          id="returningDate"
+          [value]="returningWorkDate"
+          disabled
+        />
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="leaveDuration" class="form-label">Leave Duration</label>
+        <select class="form-select" id="leaveDuration" [(ngModel)]="halfDay" name="halfDay">
+          <option value="">Full Day</option>
+          <option value="first">First Half</option>
+          <option value="second">Second Half</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <label for="leaveType" class="form-label">Leave Type</label>
+        <select class="form-select" id="leaveType" [(ngModel)]="selectedLeaveTypeId" name="leaveType">
+          <option *ngFor="let leaveType of leaveTypes" [value]="leaveType.id">{{ leaveType.name }}</option>
+        </select>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="message" class="form-label">Message</label>
+      <textarea
+        class="form-control"
+        id="message"
+        rows="3"
+        name="message"
+        placeholder="Enter your message"
+        [(ngModel)]="message"
+      ></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="assignedToId" class="form-label">Approver</label>
+      <select class="form-select" id="assignedToId" [(ngModel)]="assignedToId" name="assignedToId">
+        <option *ngFor="let user of users" [value]="user.id">{{ user.first_name }}</option>
+      </select>
+    </div>
+    <div class="text-end">
+      <button type="button" class="btn btn-primary" (click)="applyLeave()">Apply Leave</button>
+      <button type="button" class="btn btn-secondary" (click)="activeModal.dismiss()">Cancel</button>
+    </div>
+  </form>
+</div>
